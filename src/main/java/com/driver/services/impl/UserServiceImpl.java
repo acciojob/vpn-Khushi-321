@@ -73,7 +73,7 @@ public class UserServiceImpl implements UserService {
         ServiceProvider serviceProvider = serviceProviderRepository3.findById(serviceProviderId).get();
 
         user.getServiceProviderList().add(serviceProvider);
-        serviceProvider.getUsers().add((org.apache.catalina.User) user);
+        serviceProvider.getUsers().add(user);
 
         serviceProviderRepository3.save(serviceProvider);
         return user;
